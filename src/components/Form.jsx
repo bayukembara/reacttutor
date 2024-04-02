@@ -2,17 +2,18 @@ import React, { Component } from "react";
 
 class Form extends Component {
   state = {
-    name: "",
+    username: "",
   };
   changeData = (e) => {
-    let val = e.target.value;
-    this.setState({ name: val });
+    let val = e.target.name;
+    let myvalue = e.target.value;
+    this.setState({ [val]:myvalue });
   };
 
   render() {
     return (
       <>
-        <h1>Hello {this.state.name}</h1>
+        <h1>Hello {this.state.username}</h1>
         <form>
           <div class="form-group">
             <label for="">Username:</label>
