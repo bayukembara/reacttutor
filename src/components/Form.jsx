@@ -5,16 +5,21 @@ class Form extends Component {
     username: "",
   };
   changeData = (e) => {
-    let val = e.target.name;
-    let myvalue = e.target.value;
+    let val = e.target.name; //! getting input name = username
+    let myvalue = e.target.value; //! getting value from input
     this.setState({ [val]:myvalue });
   };
+
+  formSubmit = (e) => { 
+    e.preventDefault();
+    console.log(this.state.username);
+  }
 
   render() {
     return (
       <>
         <h1>Hello {this.state.username}</h1>
-        <form>
+        <form onSubmit={this.formSubmit}>
           <div class="form-group">
             <label for="">Username:</label>
             <br />
